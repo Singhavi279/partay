@@ -1,20 +1,30 @@
+window.addEventListener('load', () => {
+  const loader = document.getElementById('site-loader');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 600);
+    }, 2000);
+  }
+});
+
 const flavours = {
   blue: {
     number: "01", name: "BLUE LAGOON", role: "The Party Starter",
-    line: "MAIN CHARACTER DRINK",
-    description: "Shows up loud, owns the room. No introduction needed.",
+    line: "MAIN CHARACTER DRINK · 7 CALORIES",
+    description: "Shows up loud, owns the room. 7 calories of pure main character energy.",
     src: "assets/bluelagoon.png", alt: "Partay Blue Lagoon instant mocktail mix"
   },
   pink: {
     number: "02", name: "COSMOPOLITAN", role: "The Standout Classic",
-    line: "SIP LIKE YOU MEAN IT",
-    description: "Smooth. Sharp. Unapologetic. The drink that makes the room turn around.",
+    line: "SIP LIKE YOU MEAN IT · 7 CALORIES",
+    description: "Smooth. Sharp. Unapologetic. 7 calories of high-bar, zero-guilt energy.",
     src: "assets/cosmopolitan.png", alt: "Partay Cosmopolitan instant mocktail mix"
   },
   green: {
     number: "03", name: "MOJITO", role: "The Legendary Refresher",
-    line: "OG CHILL ICON",
-    description: "Minty-cool, always trending, never trying too hard. The effortless one.",
+    line: "OG CHILL ICON · 7 CALORIES",
+    description: "Minty-cool, always trending. 7 calories of effortless, guilt-free chill.",
     src: "assets/mojito.png", alt: "Partay Mojito instant mocktail mix"
   }
 };
@@ -111,9 +121,9 @@ const closingPack = document.querySelector("#closingPack");
 const closingLabel = document.querySelector("#closingFlavour");
 const closingKeys = ["blue", "pink", "green"];
 const closingLabels = {
-  blue: "BLUE LAGOON · MAIN CHARACTER DRINK",
-  pink: "COSMOPOLITAN · SIP LIKE YOU MEAN IT",
-  green: "MOJITO · OG CHILL ICON"
+  blue: "BLUE LAGOON · 7 CALORIES · MAIN CHARACTER",
+  pink: "COSMOPOLITAN · 7 CALORIES · STANDOUT CLASSIC",
+  green: "MOJITO · 7 CALORIES · OG CHILL ICON"
 };
 let closingIndex = 2;
 let closingTimer;
